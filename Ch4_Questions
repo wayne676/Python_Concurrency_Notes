@@ -1,0 +1,11 @@
+1- what is a file descriptor and in what ways can it be handled in Python?
+
+2- what problem arises when file descriptors are not handled carefully?
+
+3- what is a lock and in what ways can it be handled?
+
+4- what problem arises when locks are not handled carefully?
+
+5- what is the idea behind context managers?
+
+6- what options does wht with statement in Python provide in terms of context management?

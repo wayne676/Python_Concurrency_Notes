@@ -1,0 +1,34 @@
+1- what is thread, what is the main difference between thread and process
+A: smallest unit of programming commands (code) that OS can process and manage. Thread is typically a component of a process
+
+2- What are the API options provided by thread module?
+A: thread.start_new_thread()
+
+3- What are the API options provided by threading module?
+A: run(), start(), join(). isAlive(), getName(), setName(). 
+    threading.activaCount(), threading.currentThread(), threading.enumerate()
+
+4- what are the processes of creating new threads via the thread and threading modules?
+A: class myThread(threading.Thread):
+        def __init__(self):
+            threading.Thread.__init__(self)
+
+        def run():
+            function()
+    
+5- what is the idea behind thread syncrhonization using locks?
+A: Avoid any potenial data pollution when multiple threads access their shared resouces
+
+6- what is the process of implementing thread syncrhonizationusing locks?
+A: thread_lock = threading.lock()
+   thread_lock.acquire()
+   thread_lock.release()
+
+7- what is idea behind the queue data structure?
+A: Tasks in the queue can feed the thread rather than creating N threads when there are N Tasks
+
+8- what is the main application of queuing in concurrent programming?
+A: hold the tasks that will be executed by thread and interact with thread pool 
+
+9- what are the core differences between a regular queue and a priority queue?
+A: FIFO and out based on priority
