@@ -1,0 +1,13 @@
+[1,2,3,4,5,6]
+
+1   2   3   4   5   6
+3       7       11
+
+3       7       11
+10           11
+
+10           11
+21
+
+log2(6) = 3
+An addition operator of six elements can be doen in log2(6)=3 steps

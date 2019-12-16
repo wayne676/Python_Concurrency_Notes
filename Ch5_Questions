@@ -1,0 +1,6 @@
+1- Why is concurrency applicable in making web requests?
+A: Process of making a request to a web server and obtaining the returned response is independent from the same procedure for a 
+    different web server.
+
+2- What are the considerations that need to be made while developing applications that make concurrent web requests?
+A: Timeout

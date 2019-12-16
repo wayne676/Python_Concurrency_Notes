@@ -1,0 +1,16 @@
+1- What is a reduction operator? What ocnfitions mube be satisfied so that an operator can be reduction one?
+A: Take a set or an array of elements and perform some form of computation to return only one single result
+
+2- What properties do reduction operators have that are equivalent to the required conditions?
+A: a- Operator can reduce an array of elements into one scalar value
+   b- End result mube be obtained through creating and computing partial tasks (分组操作)
+
+3- What is the connection between reduction operators and concurrent programming?
+A: Computation of any reduction operator to be able to be divided into smaller partial computations
+
+4- What are some of the considerations that must be made while working with multiprocessing programs that facilitate interprocess
+    communication in Python
+A: double .get() and .task_done()
+
+5- What are some real-life applications of concurrent reduction operators?
+A: NumPy, bitwise: finite state machines, communication across sockets/ports, compression and encryption

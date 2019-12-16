@@ -1,11 +1,22 @@
 1- what is a file descriptor and in what ways can it be handled in Python?
+A: Opened file is essentially represented by an integer. This integer acts as a reference point that the program can use in order
+    to have access to that file.  Open or with statement
 
 2- what problem arises when file descriptors are not handled carefully?
+A: file descriptor leakage
 
-3- what is a lock and in what ways can it be handled?
+3- what is a lock and in what ways can it be handled in Python?
+A: A mechanism in concurrent and parallel programming that are typically used to synchronize threads in multithreaded application.
+    x_lock = threading.Lock()
+    x_lock.acquire()
+    x_lock.release()
 
 4- what problem arises when locks are not handled carefully?
+A: deadlock, program will hang forever
 
 5- what is the idea behind context managers?
+A: Manage resources properly where resources are shared across different entities in the concurrent or parallel application.
 
-6- what options does wht with statement in Python provide in terms of context management?
+6- what options does the with statement in Python provide in terms of context management?
+A: with exp1 as target1, exp2 as target2:
+        [code]

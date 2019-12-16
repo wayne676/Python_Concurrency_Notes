@@ -1,0 +1,35 @@
+1- what is a process? what are the core differences between a process and a thread?
+A: A process of execution is an instance of a specific computer program or software what is being executed by the operationg
+    system. It contains both the program code and its current activities and interactions with oher entities.
+    PS: a program can contains multiple porcess
+
+2- what is multiprocessing? what are the core differences between multiporcessing and multithreading?
+A: Each process is executed on separate CPU. multithreading run on 1 CPU and share resources
+    PS: When multitasking, an operating system simply switches between different processes at high speed to give the appearance that 
+    these processes are being executed simultaneously, even though it is usually the case that only one process is executing on one
+    signle CPU at any given time.
+    In contrast, multiporcessing is the method of using more than one CPU to execute a task. 
+
+
+3- what are the API options provided by the multiporcessing module?
+A: p = Process(target=func, args=())
+    p.start()
+    p.join()
+    
+
+4- what are the core differences between the Process class and the Pool class from multiporcessing module?
+A: Pool class can gurantee the order of the result
+
+5- what are the options to determine the current process in a Python program?
+A: current_process()
+
+6- what are daemon processes? what are their purposes in terms of waiting for processes in a multiporcessing program?
+A: The process run in the background and do not block the main process exit 
+    p = Process(name="worker1", target=f1)
+    p.daemon = True
+
+7- how do you terminate a process? why is it sometimes acceptable to terminate process?
+A: p.terminate()
+
+8- what is one of the ways to facilitate interprocess communication in Python?
+A: pipes and queues

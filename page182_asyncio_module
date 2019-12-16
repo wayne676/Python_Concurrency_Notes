@@ -1,0 +1,16 @@
+- Event loops are the main coordinators of tasks in an asynchronous program. An event loop keeps track of all of the tasks that are to 
+    be run asynchronously, and decides which of those tasks should be executed at a given moment. In other words, event loops handle 
+    the tasks switching aspect (or the execution flow) of asynchronous programming.
+    When I/O or Sleep, switch to task 2, then task 3 then task 4... task n, then back to task 1
+
+- Coroutines are a special type of function that wrap around specific tasks, so that they can be exectured asynchronously. A coroutine
+    is required in order to specify where in the function the task switching should take place.
+    The tasks for coroutines are typically either stored in a task queue or created inside the event loop.
+
+- Futures are placeholders for the results returned from coroutines. These future objects are created as soon as coroutines are 
+    initiated in the event loop, so futures can represent actual results, pending results (if the coroutines have not finished 
+    executing), or even an exception (if that is what the coroutine will return).
+
+The event loop is started and interacts with its task queue, in order to obtain the first task. The coroutine for this task and its
+    corresponding future are then created. When a task switching has to take place inside of that coroutine, the coroutine suspends,
+    and the next coroutine is called; all data and the context from the first coroutine are also saved.

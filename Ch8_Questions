@@ -1,0 +1,27 @@
+1- What is an image processing task?
+A:
+
+2- What is the smallest unit of digital imaging? How is it represented in computers?
+A: Pixel, RGB (0-255, 0-255, 0-255)
+
+3- What is grayscaling? What purpose does this technique serve?
+A: Reduce the dimensionality of the image pixel matrix by only considering the intensity information of each pixel, which is represented
+    by the amount of light available.
+    Using one spectrum, important patterns in the image are more likely to be recognized with just black and white data
+    灰度化之后矩阵维数下降，运算速度大幅度提高，并且梯度信息仍然保留。
+    就是在performance和efficiency之间做一个权衡罢了。
+    我们识别物体，最关键的因素是梯度（现在很多的特征提取，SIFT,HOG等等本质都是梯度的统计信息），
+    梯度意味着边缘，这是最本质的部分，而计算梯度，自然就用到灰度图像了。颜色本身，非常容易受到光照等因素的影响，
+    同类的物体颜色有很多变化。所以颜色本身难以提供关键信息。
+    另外对于大多数的医学图像RGB提供的信息量很少（几乎没有），所以可以直接灰度图像来进行后续计算。在这些问题上，
+    反而对灰度图像预处理更重要（当然，CNN发展以后这些预处理作用也小了）。
+    下图为Kaggle肺癌比赛的热度图。热度图其实也为一维的强度图像，只是可视化的时候把亮度高的变为红色，亮度低变为蓝色的一种方式。
+
+4- What is thresholding? What purpose does this technique serve?
+A: Categorizing each pixel into different groups, also known as image segmentation
+
+5- Why should image processing be made concurrent?
+A:
+
+6- What are some good practives for concurrent image processing?
+A: Choosing the correct way (so many API or methods), Spawning an appropriate number of processes, Processing input/output concurrently 
