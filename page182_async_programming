@@ -14,3 +14,11 @@
 The event loop is started and interacts with its task queue, in order to obtain the first task. The coroutine for this task and its
     corresponding future are then created. When a task switching has to take place inside of that coroutine, the coroutine suspends,
     and the next coroutine is called; all data and the context from the first coroutine are also saved.
+
+If that coroutine is blocking (for example, input/output processing or sleeping), the flow of execution is released back to the event
+    loop, which will move on the the next item in the task queue. The event loop will initiate the last item in the task queue before
+    it switches back to the first coroutine, and will proceed the execturion from where it was last suspended.
+
+async is put in front of the `def` keyword. The function will be interpreted by Python as a coroutine. So there has to be a 
+    specification regarding when the task switching events will take place.
+await is then used to specify where and when to give back the flow of execution to the event loop.
