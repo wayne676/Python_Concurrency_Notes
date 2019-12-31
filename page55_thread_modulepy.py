@@ -21,12 +21,14 @@ def is_prime(x):
 my_input = [2, 193, 323, 1327, 433785907]
 
 for x in my_input:
-    thread.start_new_thread(is_prime, (x,))
+    thread.start_new_thread(is_prime, (x,)) # start_new_thread(function, args_tuple, kwargs_dict)
 
 a = input('Type something to quit: \n')
 print('Finished')
 
 """
+import _thread, it is very low level API, not recommanded to use
+
 If comment out the a=input(''), then program may terminate without printing out any input, in other words, the program
 terminates before the threads can finish executing. 
 $ python example2.py

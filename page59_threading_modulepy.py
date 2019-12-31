@@ -37,7 +37,7 @@ To create and customize a new thread using the threading mocule, there are speci
 
 thread method:
 start() starts a thread's activity
-join() wait until thread terminates
+join() hold main thread waiting until thread terminates
 """
 
 """
@@ -62,3 +62,7 @@ for thread in threads:
     thread.join()
 
 print('Finished.')
+
+'''
+start all then join, because of the GIL it runs sequentially
+'''

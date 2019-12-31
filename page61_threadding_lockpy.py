@@ -40,7 +40,7 @@ print('Finished.')
 """
 A primitive lock is in one of two states, “locked” or “unlocked”. 
 It is created in the unlocked state. It has two basic methods, 
-acquire(blocking=True, timeout=-1) # when blocking=False, current thread does not wait for the lock and sumply returns 0
+acquire(blocking=True, timeout=-1) # when blocking=False, current thread does not wait for the lock and simply returns 0
 if the lock cannot be acquired by the thread, when blcking=True, current thread blocks and waits for the lock be released 
 and acquires it afterwards
 and release()

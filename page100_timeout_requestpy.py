@@ -48,7 +48,7 @@ print('Done.')
 
 
 '''
- def alive_count():
+def alive_count():
     alive = [1 if thread.isAlive() else 0 for thread in threads]
     return sum(alive)
 
@@ -56,9 +56,16 @@ while alive_count() > 0 and timeout > 0:
     timeout -= UPDATE_INTERVAL
     time.sleep(UPDATE_INTERVAL)
 
-after 5 seconds timeout wil be < 0, because of the 
+after about 5 seconds timeout wil be < 0, because of the 
 thread.setDaemon(True)
-thread.start()
-Calling thread will exit no matter sub-thread is done or not
-刚好和join相反
+Without daemon threads, you'd have to keep track of threads, and tell them to exit, before your program can completely quit. 
+    By setting them as daemon threads, you can let them run and forget about them, and when your program quits, any daemon 
+    threads are killed automatically.
+
+http://httpstat.us/200: 200 OK
+http://httpstat.us/200?sleep=4000: 200 OK
+http://httpstat.us/200?sleep=20000: Custom timeout
+http://httpstat.us/400: 400 Bad Request
+Took  5.87 seconds
+
 '''

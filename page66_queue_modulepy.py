@@ -95,3 +95,9 @@ C
 Python
 
 """
+
+
+'''
+In MyThread.run() invokes process_queue(), inside process_queue(), get queue element and process it also catch emepty exception.
+    In main function, fill the queue (my_queue) and initialize thread, and process_queue() will use that queue (my_queue)
+'''

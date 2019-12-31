@@ -14,7 +14,7 @@ def get_data_from_file_v1(filename):
 
 # handles exceptions
 # def get_data_from_file_v2(filename):
-#     with my_lock, open(filename, 'r') as f:
+#     with !!-->my_lock<--!!, open(filename, 'r') as f:
 #         data.append(f.read())
 
 data = []

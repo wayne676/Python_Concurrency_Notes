@@ -91,7 +91,7 @@ for consumer in consumers:
     consumer.terminate()
     consumer.join()
 
-While no poison pull is needed as long as we use 
+While no poison pill is needed as long as we use 
 while Ture: instead of while not self.task_queue.empty():
 In terms of the reason? i have no clue
 '''

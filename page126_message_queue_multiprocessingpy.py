@@ -52,6 +52,11 @@ if __name__ == '__main__':
     tasks = multiprocessing.JoinableQueue()
     results = multiprocessing.Queue()
 
+    # enqueueing jobs
+    my_input = [2, 36, 101, 193, 323, 513, 1327, 100000, 9999999, 433785907]
+    for item in my_input:
+        tasks.put(Task(item))
+
     # spawning consumers with respect to the
     # number cores available in the system
     n_consumers = multiprocessing.cpu_count()
@@ -59,12 +64,7 @@ if __name__ == '__main__':
     consumers = [Consumer(tasks, results) for i in range(n_consumers)]
     for consumer in consumers:
         consumer.start()
-
-    # enqueueing jobs
-    my_input = [2, 36, 101, 193, 323, 513, 1327, 100000, 9999999, 433785907]
-    for item in my_input:
-        tasks.put(Task(item))
-
+        
     tasks.join()
 
     for i in range(len(my_input)):
