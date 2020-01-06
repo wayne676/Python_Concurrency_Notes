@@ -1,0 +1,8 @@
+死锁: A有锁a B有锁b
+A 等 b B 等 a
+死循环 僵死在这
+solution: 设置优先级或者不用锁
+
+活锁: process/thread will switch state constantly
+夫妻两人 如果对方饿了会让对方先用叉子吃饭
+那么 俩人都饿了 一直在等对方先用 还是个死循环
