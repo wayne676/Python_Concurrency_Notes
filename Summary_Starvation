@@ -1,0 +1,9 @@
+主要是调度算法防止饿死
+
+Poorly coordinated set of shceduling instructions is the main cause of starvation.
+A, B, C 个process or thread 优先级从高到低
+C一直看着A, B 在执行 拿不到CPU活活饿死
+priority inversion:
+A的完成依赖于C的完成, 但是C一直拿不到CPU资源, A一样饿死
+reader/writer其实就是文件读写问题 
+(queue可以解决-FIFO queue, priority queue. 又或者可以提高等了很久的process/thread的优先级. 又或者每个process/thread设置一个timer时间到了优先级提高 etc)
